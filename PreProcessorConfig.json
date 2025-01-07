@@ -1,0 +1,51 @@
+{
+    "data":[
+        {
+            "type":"Tensor",
+            "param1":null,
+            "param2":null
+        },
+        {
+            "type":"Normalize",
+            "param1":5.1,  
+            "param2":1.0
+        },
+        {
+            "type":"Resize",
+            "param1":1920,
+            "param2":1080
+        },
+        {
+            "type":"Image",
+            "param1":null,
+            "param2":null
+        },
+        {
+            "type":"CenterCrop",
+            "param1":108,
+            "param2":108
+        },
+        {
+            "type":"RandomCrop",
+            "param1":50,
+            "param2":50
+        },
+        {
+            "type":"RandomFlip",
+            "param1":0.1,
+            "param2":null
+        },
+        {
+            "type":"RandomRotate",
+            "param1":10.0,
+            "param2":null
+        },
+        {
+            "type":"GrayScale",
+            "param1":1,
+            "param2":null
+        }
+        
+        
+    ]
+}

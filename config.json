@@ -7,40 +7,48 @@
             "in":3,
             "out":16,
             "stride":2,
-            "kernel":2
+            "kernel":2,
+            "skip":null
         },
         {
             "type":"MAXPOOL2D",
             "stride":2,
-            "kernel":2
+            "kernel":2,
+            "skip":null
         },
         {
             "type":"CONV2D",
             "in":16,
             "out":64,
             "stride":2,
-            "kernel":2
+            "kernel":2,
+            "skip":null
         },
         {
             "type":"LIN",
             "in":512,
-            "out":1024
+            "out":1024,
+            "skip":null
         },
         {
-            "type":"RELU"
+            "type":"RELU",
+            "skip":null
         },
         {
             "type":"LIN",
             "in":1024,
-            "out":512
+            "out":512,
+            "skip":null
         },
         {
-            "type":"RELU"
+            "type":"RELU",
+            "skip":null
         },
         {
             "type":"LIN",
             "in":512,
-            "out":10
+            "out":1,
+            "skip":null
         }
     ],
     "loss":"CROSSENTROPY",

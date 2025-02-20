@@ -25,6 +25,11 @@
             "skip":null
         },
         {
+            "type":"FLATTEN",
+            "start":1,
+            "end":-1
+        },
+        {
             "type":"LIN",
             "in":512,
             "out":1024,
@@ -38,7 +43,7 @@
             "type":"LIN",
             "in":1024,
             "out":512,
-            "skip":null
+            "skip":null 
         },
         {
             "type":"RELU",
@@ -49,9 +54,44 @@
             "in":512,
             "out":1,
             "skip":null
+        },
+        {   
+            "type":"TRANSFORMER",
+            "d_model": 512,
+            "nhead": 8,
+            "num_encoder_layers": 6,
+            "num_decoder_layers": 6,
+            "dim_feedforward": 2048,
+            "dropout": 0.1,
+            "activation": "relu"
+        },
+        {
+            "type":"EMBEDDING",
+            "num_embeddings":1048,
+            "embedding_dim" : 768
+        },
+        {
+            "type":"RESBLOCK",
+            "in":3,
+            "out":64,
+            "stride":1,
+            "downsample":null
+        },
+        {
+            "type":"DROPOUT",
+            "prob":0.1
+        },
+        {
+            "type" : "BATCHNORM1D",
+            "num_features" : 128
+        },
+        {
+            "type" : "BATCHNORM2D",
+            "num_features":128
+        },
+        {
+            "type" : "GAPOOL2D",
+            "out_shape":"(1,1)"
         }
-    ],
-    "loss":"CROSSENTROPY",
-    "optimizer":"ADAMW",
-    "lr":1e-4
+    ]
 }

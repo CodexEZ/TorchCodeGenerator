@@ -1,0 +1,88 @@
+{
+    "user": "Aswin",
+    "slug": "resnet18",
+    "layers": [
+      {
+        "type": "CONV2D",
+        "in": 3,
+        "out": 64,
+        "kernel": 7,
+        "stride": 2
+      },
+      {
+        "type": "BATCHNORM2D",
+        "num_features": 64
+      },
+      {
+        "type": "RELU"
+      },
+      {
+        "type": "MAXPOOL2D",
+        "kernel": 3,
+        "stride": 2
+      },
+      {
+        "type": "RESBLOCK",
+        "in": 64,
+        "out": 64,
+        "stride": 1
+      },
+      {
+        "type": "RESBLOCK",
+        "in": 64,
+        "out": 64,
+        "stride": 1
+      },
+      {
+        "type": "RESBLOCK",
+        "in": 64,
+        "out": 128,
+        "stride": 2
+      },
+      {
+        "type": "RESBLOCK",
+        "in": 128,
+        "out": 128,
+        "stride": 1
+      },
+      {
+        "type": "RESBLOCK",
+        "in": 128,
+        "out": 256,
+        "stride": 2
+      },
+      {
+        "type": "RESBLOCK",
+        "in": 256,
+        "out": 256,
+        "stride": 1
+      },
+      {
+        "type": "RESBLOCK",
+        "in": 256,
+        "out": 512,
+        "stride": 2
+      },
+      {
+        "type": "RESBLOCK",
+        "in": 512,
+        "out": 512,
+        "stride": 1
+      },
+      {
+        "type": "GAPOOL2D",
+        "out_shape": "(1,1)"
+      },
+      {
+        "type": "FLATTEN",
+        "start": 1,
+        "end": -1
+      },
+      {
+        "type": "LIN",
+        "in": 512,
+        "out": 1000
+      }
+    ]
+  }
+  
